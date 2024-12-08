@@ -1,10 +1,39 @@
-<!--index.wxml-->
 <view class="container">
-  <view  bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  <!-- Header -->
+  <view class="header">
+    <img src="https://via.placeholder.com/152" alt="test_image" class="logo" />
+    <img src="https://via.placeholder.com/152" alt="test_logo" class="logo" />
+
+    <img src="/pages/data/pics/sustech_logo.jpg" alt="sustech_logo" class="logo" />
+    <text class="title">SUSTech</text>
+    <input class="search-bar" placeholder="搜索" />
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+
+  <!-- Banner -->
+  <view class="banner">
+    <text class="banner-text">“走进华为 遇见未来”</text>
+    <text class="banner-subtext">南科大专场活动</text>
+  </view>
+
+  <!-- Categories -->
+  <view class="categories">
+    <view class="category" wx:for="{{categories}}" wx:key="index" bindtap="navigateCategory">
+      {{item}}
+    </view>
+  </view>
+
+  <!-- Hot Posts -->
+  <view class="hot-posts">
+    <text class="section-title">热门帖子</text>
+    <block wx:for="{{posts}}" wx:key="index">
+      <text  class="post-item">{{index + 1}}. {{item}}</text>
+    </block>
+  </view>
+
+  <!-- Bottom Navbar -->
+  <view class="navbar">
+    <view class="nav-item" wx:for="{{navItems}}" wx:key="index" bindtap="switchNav">
+      <text>{{item}}</text>
+    </view>
   </view>
 </view>

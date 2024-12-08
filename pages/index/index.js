@@ -1,26 +1,17 @@
-//index.js
-//获取应用实例
-var app = getApp()
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {}
+    categories: ["学校通知", "学业", "生活", "校友圈"],
+    posts: ["热门帖子内容1", "热门帖子内容2", "热门帖子内容3"],
+    navItems: ["服务", "发布", "消息", "我的"],
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+  navigateCategory(e) {
+    const category = e.currentTarget.dataset.item;
+    console.log(`Navigating to ${category}`);
+    // Add navigation logic
   },
-  onLoad: function () {
-    console.log('onLoad')
-    var that = this
-    //调用应用实例的方法获取全局数据
-    app.getUserInfo(function(userInfo){
-      //更新数据
-      that.setData({
-        userInfo:userInfo
-      })
-    })
-  }
-})
+  switchNav(e) {
+    const navItem = e.currentTarget.dataset.item;
+    console.log(`Switched to ${navItem}`);
+    // Add switch logic
+  },
+});
