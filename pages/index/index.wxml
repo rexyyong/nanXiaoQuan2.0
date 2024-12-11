@@ -1,10 +1,7 @@
 <view class="container">
   <!-- Header -->
   <view class="header">
-    <img src="https://via.placeholder.com/152" alt="test_image" class="logo" />
-    <img src="https://via.placeholder.com/152" alt="test_logo" class="logo" />
-
-    <img src="/pages/data/pics/sustech_logo.jpg" alt="sustech_logo" class="logo" />
+    <image src="/pages/data/pics/sustech_logo.jpg" class="logo"></image>
     <text class="title">SUSTech</text>
     <input class="search-bar" placeholder="搜索" />
   </view>
@@ -17,23 +14,33 @@
 
   <!-- Categories -->
   <view class="categories">
-    <view class="category" wx:for="{{categories}}" wx:key="index" bindtap="navigateCategory">
-      {{item}}
-    </view>
+    <block wx:for="{{categories}}" wx:key="index">
+      <view 
+        class="category" 
+        data-item="{{item}}" 
+        bindtap="navigateCategory">
+        {{item}}
+      </view>
+    </block>
   </view>
 
   <!-- Hot Posts -->
   <view class="hot-posts">
     <text class="section-title">热门帖子</text>
     <block wx:for="{{posts}}" wx:key="index">
-      <text  class="post-item">{{index + 1}}. {{item}}</text>
+      <text class="post-item">{{index + 1}}. {{item}}</text>
     </block>
   </view>
 
   <!-- Bottom Navbar -->
   <view class="navbar">
-    <view class="nav-item" wx:for="{{navItems}}" wx:key="index" bindtap="switchNav">
-      <text>{{item}}</text>
-    </view>
+    <block wx:for="{{navItems}}" wx:key="index">
+      <view 
+        class="nav-item" 
+        data-item="{{item}}" 
+        bindtap="switchNav">
+        <text>{{item}}</text>
+      </view>
+    </block>
   </view>
 </view>
