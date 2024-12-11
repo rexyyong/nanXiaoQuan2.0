@@ -1,9 +1,9 @@
 <view class="container">
   <!-- Header -->
   <view class="header">
-    <image src="/pages/data/pics/sustech_logo.jpg" class="logo"></image>
+    <image src="/pages/data/pics/sustech_logo.jpg" mode="aspectFit"></image>
     <text class="title">SUSTech</text>
-    <input class="search-bar" placeholder="搜索" />
+    <input class="search-bar" placeholder="搜索" placeholder-style="color:white" />
   </view>
 
   <!-- Banner -->
