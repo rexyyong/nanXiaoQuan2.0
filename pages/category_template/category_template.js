@@ -2,6 +2,12 @@ Page({
   data: {
     title: "",
     items: [],
+    isPostFormVisible: false, // Toggle form visibility
+    newPost: {
+      id: null,
+      title: "",
+      description: "",
+    },
   },
 
   onLoad(options) {
@@ -27,9 +33,68 @@ Page({
       ],
     };
 
+    // Load data for the category
+    const items = wx.getStorageSync(category) || dataMap[category] || [];
     this.setData({
       title: category,
-      items: dataMap[category] || [],
+      items: items,
+    });
+  },
+
+  // Show the post form
+  showPostForm() {
+    this.setData({
+      isPostFormVisible: true,
+    });
+  },
+
+  // Hide the post form
+  hidePostForm() {
+    this.setData({
+      isPostFormVisible: false,
+      newPost: { id: null, title: "", description: "" },
+    });
+  },
+
+  // Handle input for the new post
+  handlePostInput(e) {
+    const { field } = e.currentTarget.dataset;
+    this.setData({
+      newPost: {
+        ...this.data.newPost,
+        [field]: e.detail.value,
+      },
+    });
+  },
+
+  // Add a new post
+  addPost() {
+    const { newPost, items, title } = this.data;
+
+    if (!newPost.title || !newPost.description) {
+      wx.showToast({
+        title: "请填写完整内容",
+        icon: "none",
+      });
+      return;
+    }
+
+    // Assign a new ID based on the last item's ID or set it as 1
+    newPost.id = items.length > 0 ? items[items.length - 1].id + 1 : 1;
+
+    // Update the items and store locally
+    const updatedItems = [...items, newPost];
+    this.setData({
+      items: updatedItems,
+      isPostFormVisible: false,
+      newPost: { id: null, title: "", description: "" },
+    });
+
+    wx.setStorageSync(title, updatedItems);
+
+    wx.showToast({
+      title: "发布成功",
+      icon: "success",
     });
   },
 });

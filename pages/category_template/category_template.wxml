@@ -1,8 +1,13 @@
 <view class="container">
+  <!-- Header -->
   <view class="header">
     <text class="title">{{title}}</text>
   </view>
 
+  <!-- Post Button -->
+  <button class="post-button" bindtap="showPostForm">发布新帖子</button>
+
+  <!-- Content -->
   <view class="content">
     <block wx:for="{{items}}" wx:key="id">
       <view class="item">
@@ -10,5 +15,30 @@
         <text class="item-description">{{item.description}}</text>
       </view>
     </block>
+  </view>
+
+  <!-- Post Form Modal -->
+  <view wx:if="{{isPostFormVisible}}" class="post-form-modal">
+    <view class="post-form">
+      <text class="form-title">新帖子</text>
+      <input
+        class="form-input"
+        placeholder="标题"
+        data-field="title"
+        bindinput="handlePostInput"
+        value="{{newPost.title}}"
+      />
+      <textarea
+        class="form-textarea"
+        placeholder="描述"
+        data-field="description"
+        bindinput="handlePostInput"
+        value="{{newPost.description}}"
+      ></textarea>
+      <view class="form-actions">
+        <button class="form-button" bindtap="addPost">发布</button>
+        <button class="form-button cancel-button" bindtap="hidePostForm">取消</button>
+      </view>
+    </view>
   </view>
 </view>
