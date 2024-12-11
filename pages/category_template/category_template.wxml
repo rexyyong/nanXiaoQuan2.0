@@ -1,0 +1,14 @@
+<view class="container">
+  <view class="header">
+    <text class="title">{{title}}</text>
+  </view>
+
+  <view class="content">
+    <block wx:for="{{items}}" wx:key="id">
+      <view class="item">
+        <text class="item-title">{{item.title}}</text>
+        <text class="item-description">{{item.description}}</text>
+      </view>
+    </block>
+  </view>
+</view>
