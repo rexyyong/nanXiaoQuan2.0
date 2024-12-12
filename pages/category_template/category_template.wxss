@@ -127,3 +127,9 @@
 .form-button:active {
   background-color: #005f99;
 }
+
+.item-date {
+  font-size: 12px;
+  color: #888; /* Lighter color for date */
+  margin-top: 4px;
+}
