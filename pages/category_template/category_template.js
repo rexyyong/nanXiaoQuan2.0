@@ -43,6 +43,13 @@ Page({
       time: item.time || now.toTimeString().slice(0, 5), // Default to current time if missing
     }));
 
+    // Sort items in reverse chronological order
+    updatedItems.sort((a, b) => {
+      const dateA = new Date(`${a.date}T${a.time}`);
+      const dateB = new Date(`${b.date}T${b.time}`);
+      return dateB - dateA; // Sort newest to oldest
+    });
+
     this.setData({ title: category, items: updatedItems });
   },
 
@@ -95,7 +102,7 @@ Page({
     };
 
     // Update the items and store locally
-    const updatedItems = [...items, newItem];
+    const updatedItems = [newItem, ...items]; // Add new item at the top
     this.setData({
       items: updatedItems,
       isPostFormVisible: false,
