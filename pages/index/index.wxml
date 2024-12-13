@@ -31,10 +31,16 @@
       <view class="post-block">
         <text class="post-title">{{item.title}}</text>
         <text class="post-description">{{item.description}}</text>
-        <text class="post-meta">{{item.date}} {{item.time}}</text>
+        <view class="post-meta">
+          <text>{{item.date}}</text>
+          <text class="post-time">{{item.time}}</text>
+        </view>
       </view>
     </block>
   </view>
+
+  <!-- Padding to allow scrolling -->
+  <view style="height: 200px;"></view>
 
   <!-- Bottom Navbar -->
   <view class="navbar">

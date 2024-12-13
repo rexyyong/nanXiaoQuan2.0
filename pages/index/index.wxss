@@ -4,6 +4,8 @@
   flex-direction: column;
   height: 100vh;
   background-color: #f3f6fa; /* Light blue-grey for a cleaner look */
+  overflow-y: scroll; /* Enable scrolling */
+  padding-bottom: 16px; /* Extra padding for bottom space */
 }
 
 /* Header Section */
@@ -93,6 +95,7 @@
   font-weight: bold;
   margin-bottom: 12px;
   color: #333;
+  text-align: center; /* Center align the title */
 }
 
 .post-block {
@@ -107,17 +110,23 @@
   font-size: 16px;
   font-weight: bold;
   color: #333;
+  margin-bottom: 4px; /* Add spacing between title and description */
 }
 
 .post-description {
   font-size: 14px;
   color: #555;
-  margin: 8px 0;
+  margin-bottom: 8px; /* Add spacing between description and metadata */
 }
 
 .post-meta {
+  display: flex;
+  justify-content: space-between; /* Space between date and time */
   font-size: 12px;
   color: #777;
+}
+
+.post-time {
   text-align: right;
 }
 
