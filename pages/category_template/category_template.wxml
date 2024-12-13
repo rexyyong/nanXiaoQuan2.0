@@ -7,15 +7,17 @@
   <!-- Post Button -->
   <button class="post-button" bindtap="showPostForm">发布新帖子</button>
 
-<view class="content">
-  <block wx:for="{{items}}" wx:key="id">
-    <view class="item">
-      <text class="item-title">{{item.title}}</text>
-      <text class="item-description">{{item.description}}</text>
-      <text class="item-date">{{item.date}}</text> <!-- Add date here -->
-    </view>
-  </block>
-</view>
+  <!-- Content Section -->
+  <view class="content">
+    <block wx:for="{{items}}" wx:key="id">
+      <view class="item">
+        <text class="item-title">{{item.title}}</text>
+        <text class="item-description">{{item.description}}</text>
+        <text class="item-date">{{item.date}}</text>
+        <text class="item-time">{{item.time}}</text>
+      </view>
+    </block>
+  </view>
 
   <!-- Post Form Modal -->
   <view wx:if="{{isPostFormVisible}}" class="post-form-modal">
