@@ -64,9 +64,11 @@
 /* Categories Section */
 .categories {
   display: grid;
+  margin: 10px; /* Centers the hot-posts section */
+  width: 80%; /* Takes up 80% of the screen width */
+  align-content: space-between;    
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
-  margin: 0 16px 24px;
 }
 
 .category {
@@ -75,7 +77,7 @@
   padding: 12px 16px;
   border-radius: 16px;
   text-align: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
