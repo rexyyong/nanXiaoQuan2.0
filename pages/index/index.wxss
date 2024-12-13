@@ -43,7 +43,8 @@
   background-color: #ffffff;
   padding: 16px;
   text-align: center;
-  margin: 16px 16px 24px;
+  margin: 10px; /* Centers the hot-posts section */
+  width: 80%; /* Takes up 80% of the screen width */
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
@@ -85,7 +86,8 @@
   padding: 16px;
   background-color: #ffffff;
   border-radius: 8px;
-  margin: 0 16px 16px;
+  margin: 0 auto; /* Centers the hot-posts section */
+  width: 80%; /* Takes up 80% of the screen width */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -97,13 +99,18 @@
   text-align: center;
 }
 
+/* Post Block */
 .post-block {
   background-color: #f9f9f9;
   padding: 12px;
   border-radius: 8px;
-  margin-bottom: 12px;
+  margin: 12px auto; /* Centers the post-block and adds vertical spacing */
+  width: 90%; /* Takes up 100% of the parent container (hot-posts) */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; /* Stacks content vertically */
 }
+
 
 .post-title {
   font-size: 16px;
