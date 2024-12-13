@@ -29,10 +29,23 @@ Page({
     });
   },
 
-  // Switch bottom navigation tabs
+    // Switch navigation tabs
   switchNav(e) {
-    const navItem = e.currentTarget.dataset.item;
-    console.log(`Switched to ${navItem}`);
-    // Add logic for bottom navigation if needed
+    const index = e.currentTarget.dataset.index; // Retrieve index from data-index
+    console.log("Tab Index:", index);
+    console.log(`Switching to tab: ${this.data.navItems[index]}`); // Debugging
+
+    this.setData({
+      currentTab: index,
+    });
+
+    // Navigation logic
+    if (index === 3) {
+      wx.navigateTo({
+        url: "/pages/profile/profile", // Ensure the profile page path matches
+      });
+    } else {
+      console.log(`Navigating to tab: ${this.data.navItems[index]}`);
+    }
   },
 });

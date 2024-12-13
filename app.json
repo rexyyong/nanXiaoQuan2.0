@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/category_template/category_template"
+    "pages/category_template/category_template",
+    "pages/profile/profile"
   ],
   "window": {
     "backgroundTextStyle": "light",

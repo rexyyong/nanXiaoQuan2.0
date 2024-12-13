@@ -1,0 +1,21 @@
+<view class="container">
+  <!-- Profile Header -->
+  <view class="profile-header">
+    <text class="profile-name">{{user.name}}</text>
+  </view>
+
+  <!-- User's Posts -->
+  <view class="user-posts">
+    <text class="section-title">用户帖子</text>
+    <block wx:for="{{user.posts}}" wx:key="index">
+      <view class="post-block">
+        <text class="post-title">{{item.title}}</text>
+        <text class="post-description">{{item.description}}</text>
+        <view class="post-meta">
+          <text>{{item.date}}</text>
+          <text class="post-time">{{item.time}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
