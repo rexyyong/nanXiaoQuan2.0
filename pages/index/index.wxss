@@ -2,15 +2,15 @@
 .container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  background-color: #f3f6fa; /* Light blue-grey for a cleaner look */
-  overflow-y: scroll; /* Enable scrolling */
-  padding-bottom: 16px; /* Extra padding for bottom space */
+  min-height: 100vh; /* Allow the page to expand beyond the viewport */
+  background-color: #f3f6fa;
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding-bottom: 16px;
 }
 
 /* Header Section */
 .header {
-  background-color: #0073e6; /* Brighter blue for a more modern look */
+  background-color: #0073e6;
   color: #fff;
   text-align: center;
   padding: 20px;
@@ -35,7 +35,7 @@
   border-radius: 16px;
   border: 1px solid #ccc;
   font-size: 20px;
-  color: #fff; /* Text color set to white */
+  color: #fff;
 }
 
 /* Banner Section */
@@ -63,13 +63,13 @@
 /* Categories Section */
 .categories {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two categories per row */
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
   margin: 0 16px 24px;
 }
 
 .category {
-  background-color: #1e90ff; /* Blue buttons */
+  background-color: #1e90ff;
   color: #fff;
   padding: 12px 16px;
   border-radius: 16px;
@@ -83,7 +83,6 @@
 /* Hot Posts Section */
 .hot-posts {
   padding: 16px;
-  flex: 1;
   background-color: #ffffff;
   border-radius: 8px;
   margin: 0 16px 16px;
@@ -95,7 +94,7 @@
   font-weight: bold;
   margin-bottom: 12px;
   color: #333;
-  text-align: center; /* Center align the title */
+  text-align: center;
 }
 
 .post-block {
@@ -110,24 +109,20 @@
   font-size: 16px;
   font-weight: bold;
   color: #333;
-  margin-bottom: 4px; /* Add spacing between title and description */
+  margin-bottom: 4px;
 }
 
 .post-description {
   font-size: 14px;
   color: #555;
-  margin-bottom: 8px; /* Add spacing between description and metadata */
+  margin-bottom: 8px;
 }
 
 .post-meta {
   display: flex;
-  justify-content: space-between; /* Space between date and time */
+  flex-direction: column; /* Stack date and time vertically */
   font-size: 12px;
   color: #777;
-}
-
-.post-time {
-  text-align: right;
 }
 
 /* Navbar */

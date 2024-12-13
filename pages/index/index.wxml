@@ -33,14 +33,14 @@
         <text class="post-description">{{item.description}}</text>
         <view class="post-meta">
           <text>{{item.date}}</text>
-          <text class="post-time">{{item.time}}</text>
+          <text>{{item.time}}</text>
         </view>
       </view>
     </block>
   </view>
 
-  <!-- Padding to allow scrolling -->
-  <view style="height: 200px;"></view>
+  <!-- Padding for scrolling -->
+  <view style="height: 50px;"></view>
 
   <!-- Bottom Navbar -->
   <view class="navbar">
