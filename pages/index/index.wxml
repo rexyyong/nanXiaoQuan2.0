@@ -28,7 +28,11 @@
   <view class="hot-posts">
     <text class="section-title">热门帖子</text>
     <block wx:for="{{posts}}" wx:key="index">
-      <text class="post-item">{{index + 1}}. {{item}}</text>
+      <view class="post-block">
+        <text class="post-title">{{item.title}}</text>
+        <text class="post-description">{{item.description}}</text>
+        <text class="post-meta">{{item.date}} {{item.time}}</text>
+      </view>
     </block>
   </view>
 

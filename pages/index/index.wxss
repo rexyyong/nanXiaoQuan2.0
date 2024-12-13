@@ -6,12 +6,12 @@
   background-color: #f3f6fa; /* Light blue-grey for a cleaner look */
 }
 
+/* Header Section */
 .header {
   background-color: #0073e6; /* Brighter blue for a more modern look */
   color: #fff;
   text-align: center;
-  padding: 20px; 
-  position: relative;
+  padding: 20px;
 }
 
 /* Logo image styles */
@@ -34,11 +34,6 @@
   border: 1px solid #ccc;
   font-size: 20px;
   color: #fff; /* Text color set to white */
-}
-
-.search-bar::placeholder {
-  color: #fff; /* White placeholder text */
-  opacity: 1; /* Adjust opacity for better visibility */
 }
 
 /* Banner Section */
@@ -81,12 +76,6 @@
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.category:hover {
-  background-color: #005bb5; /* Darker blue on hover */
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Hot Posts Section */
@@ -106,10 +95,30 @@
   color: #333;
 }
 
-.post-item {
+.post-block {
+  background-color: #f9f9f9;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.post-description {
   font-size: 14px;
-  margin: 8px 0;
   color: #555;
+  margin: 8px 0;
+}
+
+.post-meta {
+  font-size: 12px;
+  color: #777;
+  text-align: right;
 }
 
 /* Navbar */
@@ -123,16 +132,4 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.nav-item {
-  text-align: center;
-  color: #777;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.nav-item:hover {
-  color: #1e90ff; /* Highlight blue on hover */
 }
