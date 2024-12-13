@@ -23,7 +23,18 @@ Page({
         },
       ],
     },
+    navItems: getApp().globalData.navItems, // Access global nav items
   },
 
-  // Placeholder if additional logic for profile page is added
+  // Use global navigateCategory function
+  navigateCategory(e) {
+    const category = e.currentTarget.dataset.item;
+    getApp().navigateCategory(category); // Call the global function
+  },
+
+  // Use global switchNav function
+  switchNav(e) {
+    const index = e.currentTarget.dataset.index;
+    getApp().switchNav(index); // Call the global function
+  },
 });

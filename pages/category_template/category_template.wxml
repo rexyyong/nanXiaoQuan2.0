@@ -43,4 +43,16 @@
       </view>
     </view>
   </view>
+  
+  <!-- Bottom Navbar -->  
+  <view class="navbar">
+    <block wx:for="{{navItems}}" wx:key="index">
+      <view 
+        class="nav-item" 
+        data-index="{{index}}" 
+        bindtap="switchNav">
+        <text>{{item}}</text>
+      </view>
+    </block>
+  </view>
 </view>

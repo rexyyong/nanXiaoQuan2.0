@@ -8,7 +8,10 @@ Page({
       title: "",
       description: "",
     },
+    navItems: getApp().globalData.navItems, // Access global nav items
+
   },
+
 
   onLoad(options) {
     const { category } = options;
@@ -115,5 +118,17 @@ Page({
       title: "发布成功",
       icon: "success",
     });
+  },
+
+  // Use global navigateCategory function
+  navigateCategory(e) {
+    const category = e.currentTarget.dataset.item;
+    getApp().navigateCategory(category); // Call the global function
+  },
+
+  // Use global switchNav function
+  switchNav(e) {
+    const index = e.currentTarget.dataset.index;
+    getApp().switchNav(index); // Call the global function
   },
 });

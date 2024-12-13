@@ -6,7 +6,7 @@ Page({
       { id: 2, title: "热门帖子内容2", description: "这是热门帖子2的描述", date: "2024-12-11", time: "10:30" },
       { id: 3, title: "热门帖子内容3", description: "这是热门帖子3的描述", date: "2024-12-10", time: "09:00" },
     ],
-    navItems: ["服务", "发布", "消息", "我的"],
+    navItems: getApp().globalData.navItems, // Access global nav items
   },
 
   onLoad() {
@@ -20,32 +20,15 @@ Page({
     this.setData({ posts: sortedPosts });
   },
 
-  // Navigate to category-specific pages using the template
+  // Use global navigateCategory function
   navigateCategory(e) {
     const category = e.currentTarget.dataset.item;
-    console.log(`Navigating to ${category}`);
-    wx.navigateTo({
-      url: `/pages/category_template/category_template?category=${category}`,
-    });
+    getApp().navigateCategory(category); // Call the global function
   },
 
-    // Switch navigation tabs
+  // Use global switchNav function
   switchNav(e) {
-    const index = e.currentTarget.dataset.index; // Retrieve index from data-index
-    console.log("Tab Index:", index);
-    console.log(`Switching to tab: ${this.data.navItems[index]}`); // Debugging
-
-    this.setData({
-      currentTab: index,
-    });
-
-    // Navigation logic
-    if (index === 3) {
-      wx.navigateTo({
-        url: "/pages/profile/profile", // Ensure the profile page path matches
-      });
-    } else {
-      console.log(`Navigating to tab: ${this.data.navItems[index]}`);
-    }
+    const index = e.currentTarget.dataset.index;
+    getApp().switchNav(index); // Call the global function
   },
 });
